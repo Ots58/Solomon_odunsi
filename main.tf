@@ -31,7 +31,7 @@ resource "aws_eip" "one" {
     ami = "ami-0571c1aedb4b8c5fc"
     instance_type = "t2.micro"
     availability_zone = "us-west-2a"
-    key_name = "main-key"
+    key_name = "vockey"
 
  network_interface {
    device_index = 0
@@ -58,7 +58,7 @@ connection {
         type = "ssh"
         host = aws_instance.web_server_instance.public_ip
         user = "ec2-user"
-        private_key=file("${path.module}/main-key.pem")
+        private_key=file("${path.module}/vockey.pem")
         
     }
         tags = {
