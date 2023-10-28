@@ -1,7 +1,7 @@
 provider "aws" {
-  region     = "us-west-2"
-  access_key = "AKIAU64XUFFCNITA2JWY"
-  secret_key = "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"
+  region     = ""
+  access_key = ""
+  secret_key = ""
 }
 
 # Creating a Network Interface for interacting with services within the network
