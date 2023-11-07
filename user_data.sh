@@ -11,6 +11,7 @@ sudo systemctl start httpd
 sudo systemctl enable httpd
 
 # Ensure to use this when connecting to your DB from EC2
-# sudo yum install mariadb
+ sudo dnf install mariadb105
+
 # use the writers instance endpoint
 # mysql -h <endpoint> -P 3306 -u <mymasteruser> -p
