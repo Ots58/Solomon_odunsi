@@ -1,2 +1,6 @@
 Instance Type=t2.micro,Instance ID=i-038e8d560e21ca992,Public DNS=,AMI ID=ami-0571c1aedb4b8c5fc
 Instance Type=t2.micro,Instance ID=i-096539ea7764db310,Public DNS=,AMI ID=ami-0571c1aedb4b8c5fc
+Instance Type=t2.micro,Instance ID=i-0021c1777c6aef247,Public DNS=,AMI ID=ami-0571c1aedb4b8c5fc
+Instance Type=t2.micro,Instance ID=i-0ae9f32fa7db64837,Public DNS=,AMI ID=ami-0571c1aedb4b8c5fc
+Instance Type=t2.micro,Instance ID=i-02402bf043e29383d,Public DNS=ec2-34-216-221-167.us-west-2.compute.amazonaws.com,AMI ID=ami-0571c1aedb4b8c5fc
+Instance Type=t3.micro,Instance ID=i-03a0b2e36a085b6e1,Public DNS=ec2-35-89-145-221.us-west-2.compute.amazonaws.com,AMI ID=ami-00448a337adc93c05
