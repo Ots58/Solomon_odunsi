@@ -95,6 +95,8 @@ resource "aws_security_group" "allow_aurora_access" {
     protocol    = "tcp"
     security_groups = [aws_security_group.allow_ssh.id] 
   }
+
+  
   tags = {
     Name = "aurora-stack-allow-aurora-MySQL"
   }

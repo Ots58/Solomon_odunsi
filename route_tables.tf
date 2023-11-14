@@ -24,7 +24,7 @@ resource "aws_route_table" "pro_rt" {
 }
 
 
-# Creating a route table for the Private subnet
+# Creating a route table for the Private subnets
 resource "aws_route_table" "pro_rt2" {
   vpc_id = aws_vpc.pro_vpc.id
 
