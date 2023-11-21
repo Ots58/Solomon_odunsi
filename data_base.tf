@@ -5,9 +5,9 @@ resource "aws_rds_cluster" "auroracluster" {
   engine                    = "aurora-mysql"
   engine_version            = "5.7.mysql_aurora.2.11.1"
   
-  database_name             = "auroradb"
+  database_name             = "aurora_db"
   master_username           = "test"
-  master_password           = "mustbeeightcharaters"
+  master_password           = "Extrajos58"
   skip_final_snapshot       = true
   final_snapshot_identifier = "aurora-final-snapshot"
   db_subnet_group_name = aws_db_subnet_group.db_subnet.name
