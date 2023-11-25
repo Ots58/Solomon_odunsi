@@ -16,25 +16,25 @@
 # use the writers instance endpoint
 # mysql -h <endpoint> -P 3306 -u <mymasteruser> -p
 
-#!/bin/bash -xe
-# STEP 1 - Setpassword & DB Variables
+!/bin/bash -xe
+STEP 1 - Setpassword & DB Variables
 
-# DBName='aurora_db'
-# DBUser='test'
-# DBPassword='Extrajos58'
-# DBRootPassword='Extrajos58'
+DBName='aurora_db'
+DBUser='test'
+DBPassword='Extrajos58'
+DBRootPassword='Extrajos58'
 
-# # STEP 2 - Install system software - including Web and DB
+# STEP 2 - Install system software - including Web and DB
 
-# sudo yum install -y wget php-mysqlnd httpd php-fpm php-mysqli mariadb105-server php-json php php-devel 
+sudo yum install -y wget php-mysqlnd httpd php-fpm php-mysqli mariadb105-server php-json php php-devel 
 
-# # STEP 3 - Web and DB Servers Online - and set to startup
+# STEP 3 - Web and DB Servers Online - and set to startup
 
 
-# systemctl enable httpd 
-# systemctl enable mariadb 
-# systemctl start httpd 
-# systemctl start mariadb 
+systemctl enable httpd 
+systemctl enable mariadb 
+systemctl start httpd 
+systemctl start mariadb 
 
 # # STEP 4 - Set Mariadb Root Password
 

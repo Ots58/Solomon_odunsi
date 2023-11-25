@@ -27,15 +27,15 @@ resource "aws_launch_template" "prod-launch-template" {
         host = local.host
     } )) 
   #IAM profile
-  # iam_instance_profile {
-  #       name                        = "instance_role_prod"
-  #  }     
-  # tag_specifications {
-  #       resource_type               = "instance"
-  #       tags                        = {
-  #           Name                    = "mysqlserver"
-  #  }
-  # }
+  iam_instance_profile {
+        name                        = "instance_role_prod"
+   }     
+  tag_specifications {
+        resource_type               = "instance"
+        tags                        = {
+            Name                    = "mysqlserver"
+   }
+  }
   }
 
 #Autoscaling Group
