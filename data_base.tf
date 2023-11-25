@@ -1,4 +1,4 @@
-# Not yet finished
+# # Not yet finished
 resource "aws_rds_cluster" "auroracluster" {
   cluster_identifier        = "auroracluster"
   availability_zones        = ["us-west-2a", "us-west-2b"]
@@ -16,10 +16,10 @@ resource "aws_rds_cluster" "auroracluster" {
     Name = "auroracluster-db"
   }
 }
-# Be sure to use this when connecting to your DB from EC2
-# sudo dnf install mariadb105
-# use the writers instance endpoint
-# mysql -h <endpoint> -P 3306 -u <mymasteruser> -p
+# # Be sure to use this when connecting to your DB from EC2
+# # sudo dnf install mariadb105
+# # use the writers instance endpoint
+# # mysql -h <endpoint> -P 3306 -u <mymasteruser> -p
 resource "aws_rds_cluster_instance" "clusterinstance" {
   count              = 2
   identifier         = "clusterinstance-${count.index}"

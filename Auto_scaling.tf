@@ -26,17 +26,32 @@ resource "aws_launch_template" "prod-launch-template" {
         PW   = local.PW
         host = local.host
     } )) 
-  #IAM profile
-  iam_instance_profile {
-        name                        = "instance_role_prod"
-   }     
-  tag_specifications {
-        resource_type               = "instance"
-        tags                        = {
-            Name                    = "mysqlserver"
-   }
-  }
-  }
+
+#IAM profile
+# iam_instance_profile {
+#         name                        = "instance_role_prod"
+#    }     
+#   tag_specifications {
+#         resource_type               = "instance"
+#         tags                        = {
+#             Name                    = "aurora_db"
+#   }
+#   }
+# resource "aws_iam_instance_profile" "prod_test_profile" {
+#   name = "prod_test_profile"
+#   role = aws_iam_role.role.name
+# }
+
+#  resource "aws_instance" "instance" {
+#   iam_instance_profile = aws_iam_instance_profile.prod_test_profile.name
+# }
+
+# tag_specifications {
+#         resource_type               = "instance"
+#         tags                        = {
+#             Name                    = "aurora_db"
+# }
+}
 
 #Autoscaling Group
 resource "aws_autoscaling_group" "prod-AutoScalingGroup" {

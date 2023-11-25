@@ -1,4 +1,4 @@
-# Creating a Security group
+# Creating a Security group #load balancer
 resource "aws_security_group" "allow_web" {
   name        = "allow_web"
   description = "Allow web inbound traffic"
@@ -41,7 +41,7 @@ resource "aws_security_group" "allow_web" {
   }
 }
 
-#Creating security group to allow ssh into Aurora
+#Creating security group to allow ssh into Aurora #bastion
 resource "aws_security_group" "allow_ssh" {
   name        = "allow_ssh"
   description = "Allow SSH traffic"
@@ -63,28 +63,28 @@ resource "aws_security_group" "allow_ssh" {
     Name = "allow_ssh"
   }
 }
-#Creating security group to allow Ec2 send traffic to aurora
-resource "aws_security_group" "allow_ec2_aurora" {
-  name        = "allow_ec2_aurora"
-  description = "Allow EC2 to Aurora traffic"
-  vpc_id      = aws_vpc.pro_vpc.id
-  ingress {
-    description      = "allow ec2 to aurora"
-    from_port        = 22
-    to_port          = 22
-    protocol         = "tcp"
-    cidr_blocks      = ["0.0.0.0/0"]
-  }
-  egress {
-    from_port        = 3306
-    to_port          = 3306
-    protocol         = "tcp"
-    cidr_blocks      = ["0.0.0.0/0"]
-  }
-  tags = {
-    Name = "allow_ssh"
-  }
-}
+# #Creating security group to allow Ec2 send traffic to aurora
+# resource "aws_security_group" "allow_ec2_aurora" {
+#   name        = "allow_ec2_aurora"
+#   description = "Allow EC2 to Aurora traffic"
+#   vpc_id      = aws_vpc.pro_vpc.id
+#   ingress {
+#     description      = "allow ec2 to aurora"
+#     from_port        = 22
+#     to_port          = 22
+#     protocol         = "tcp"
+#     cidr_blocks      = ["0.0.0.0/0"]
+#   }
+#   egress {
+#     from_port        = 3306
+#     to_port          = 3306
+#     protocol         = "tcp"
+#     cidr_blocks      = ["0.0.0.0/0"]
+#   }
+#   tags = {
+#     Name = "allow_ssh"
+#   }
+# }
 resource "aws_security_group" "allow_aurora_access" {
   name        = "allow_aurora_access"
   description = "Allow EC2 to aurora"
