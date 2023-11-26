@@ -11,7 +11,7 @@ data "aws_ami" "amzLinux" {
         DB                          = "aurora_db"
         User                        = "test"
         PW                          = "Extrajos58"
-        host                        = aws_rds_cluster.auroracluster.id
+        #host                        = aws_rds_cluster.auroracluster.id
 }
 #Launch Template
 resource "aws_launch_template" "prod-launch-template" {
@@ -24,7 +24,7 @@ resource "aws_launch_template" "prod-launch-template" {
         DB   = local.DB
         User = local.User
         PW   = local.PW
-        host = local.host
+        #host = local.host
     } )) 
 
 #IAM profile

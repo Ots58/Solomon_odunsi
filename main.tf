@@ -10,7 +10,7 @@ provider "aws" {
     availability_zone = "us-west-2a"
     key_name = "vockey"
     subnet_id = aws_subnet.subnet-1.id
-    vpc_security_group_ids = [aws_security_group.allow_ssh.id]
+    vpc_security_group_ids = [aws_security_group.allow_ssh.id, aws_security_group.allow_web]
     associate_public_ip_address = true
 
     user_data = file("user_data.sh")
