@@ -11,7 +11,7 @@ data "aws_ami" "amzLinux" {
         DB                          = "aurora_db"
         User                        = "test"
         PW                          = "Extrajos58"
-        #host                        = aws_rds_cluster.auroracluster.id
+        host                        = aws_rds_cluster.auroracluster.id
 }
 #Launch Template
 resource "aws_launch_template" "prod-launch-template" {
@@ -24,7 +24,7 @@ resource "aws_launch_template" "prod-launch-template" {
         DB   = local.DB
         User = local.User
         PW   = local.PW
-        #host = local.host
+        host = local.host
     } )) 
 
 #IAM profile
@@ -36,10 +36,10 @@ resource "aws_launch_template" "prod-launch-template" {
 #         tags                        = {
 #             Name                    = "aurora_db"
 #   }
-#   }
+ }
 # resource "aws_iam_instance_profile" "prod_test_profile" {
 #   name = "prod_test_profile"
-#   role = aws_iam_role.role.name
+#   #role = aws_iam_role.role.name
 # }
 
 #  resource "aws_instance" "instance" {
@@ -50,8 +50,8 @@ resource "aws_launch_template" "prod-launch-template" {
 #         resource_type               = "instance"
 #         tags                        = {
 #             Name                    = "aurora_db"
-# }
-}
+#}
+#}
 
 #Autoscaling Group
 resource "aws_autoscaling_group" "prod-AutoScalingGroup" {
