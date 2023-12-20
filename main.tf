@@ -12,6 +12,7 @@ provider "aws" {
     subnet_id = aws_subnet.subnet-1.id
     vpc_security_group_ids = [aws_security_group.allow_ssh.id, aws_security_group.allow_web.id]
     associate_public_ip_address = true
+    iam_instance_profile        = "instance_role_prod"
 
     user_data = file("user_data.sh")
 
@@ -29,3 +30,4 @@ connection {
           Name = "Web server"
         }
 }
+

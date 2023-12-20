@@ -3,6 +3,7 @@ resource "aws_subnet" "subnet-1" {
   vpc_id     = aws_vpc.pro_vpc.id
   cidr_block = var.public_cidr
   availability_zone = "us-west-2a"
+  map_public_ip_on_launch = true
 
   tags = {
     Name = "prod-subnet-Public"
@@ -14,6 +15,7 @@ resource "aws_subnet" "subnet-1a" {
   vpc_id     = aws_vpc.pro_vpc.id
   cidr_block = var.public_cidr2
   availability_zone = "us-west-2b"
+  map_public_ip_on_launch = true
 
   tags = {
     Name = "prod-subnet-Public2"
